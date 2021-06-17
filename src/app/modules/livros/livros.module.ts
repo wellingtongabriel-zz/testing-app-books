@@ -15,6 +15,9 @@ import { LivrosService } from "./services/livros.service";
     LivrosListagemComponent,
     LivrosDetalhesComponent
   ],
+  exports: [
+    LivrosComponent
+  ],
   imports: [
     RouterModule.forChild(livrosRoutes)
   ],
