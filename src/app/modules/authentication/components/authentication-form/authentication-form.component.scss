@@ -1,18 +1,16 @@
-@import '../../../../../assets/styles/variavel.scss';
+@import '../../../../../assets/styles/variable.scss';
 
-.container-login {
-    
+.login {
     width: 100%;
     height: 100vh;
 
-    background-image: url(../../../../../assets/Imagens/background-login.png);
+    background-image: url(../../../../../assets/images/background-login.png);
     background-size: cover;
     background-origin: initial;
 
-    &__form {
-        
+    &__container {
         position: absolute;
-        color: $cor-branco;
+        color: $color-white;
         
         top: 360px;
         left: 115px;
@@ -26,9 +24,7 @@
             }
         }
 
-
         > form {
-
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -45,40 +41,42 @@
 
             > span {
                 min-width: 300px;
-                background: $cor-fundo-input;
+                background: $background-color-input;
                 min-height: 45px;
                 border-radius: 4px;
             }
         }
+    }
 
-        &__control-form {
-        
-            position: relative;
-            padding: 0 3px;
-    
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-    
+    &__field {
+        position: relative;
+        padding: 0 3px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > span {
+            font-size: 12px;
+        }
+
+        > button {
+            border-radius: 44px;
+            color: $color-pink;
+            width: 85px;
+            height: 36px;
+            border: none;
+            cursor: pointer;
+        }
+
+        &--password {
             > span {
-                font-size: 12px;
-            }
-    
-            &-senha {
                 display: flex;
                 width: 80%;
                 flex-direction: column;
             }
-    
-            > button {
-                border-radius: 44px;
-                color: $cor-rosa;
-                width: 85px;
-                height: 36px;
-                border: none;
-                cursor: pointer;
-            }
         }
     }
+
 }
 
