@@ -18,6 +18,9 @@ import { LivrosService } from "./services/livros.service";
   imports: [
     RouterModule.forChild(livrosRoutes)
   ],
+  exports: [
+    LivrosComponent
+  ],
   providers: [
     LivrosService
   ]
