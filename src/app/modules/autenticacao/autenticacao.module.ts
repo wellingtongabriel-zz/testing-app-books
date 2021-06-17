@@ -16,6 +16,9 @@ import { AutenticacaoService } from "./services/autenticacao.service";
   imports: [
     RouterModule.forChild(autenticacaoRoutes)
   ],
+  exports: [
+    AutenticacaoComponent
+  ],
   providers: [
     AutenticacaoService
   ],
