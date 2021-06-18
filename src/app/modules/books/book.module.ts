@@ -1,5 +1,7 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { SharedModule } from "src/app/shared/shared.module";
 
 import { booksRoutes } from "./books.routes";
 
@@ -16,7 +18,9 @@ import { BookService } from "./services/book.service";
     BooksListComponent,
   ],
   imports: [
-    RouterModule.forChild(booksRoutes)
+    RouterModule.forChild(booksRoutes),
+    SharedModule,
+    CommonModule
   ],
   exports: [
     BookComponent

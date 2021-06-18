@@ -1,1 +1,22 @@
-<h1> Livros listagem </h1>
+<section>
+    <div class="books">
+        <div *ngFor="let book of books" class="books__card">
+            <div class="books__image">
+                <img [src]="book.imageUrl" [alt]="book.title" />
+            </div>
+            
+            <div class="books__content">
+                <header>
+                    <h1> {{ book.title }} </h1>
+                    <h4> Charles Duhigg </h4>
+                </header>
+
+                <span class="books__description">
+                    <span>{{ book.pageCount }} páginas</span>
+                    <span>Editora {{ book.publisher }}</span>
+                    <span>Publicado em {{ book.published }}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

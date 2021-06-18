@@ -1,17 +1,18 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NotifierModule } from 'angular-notifier';
 
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 
 import { BooksModule } from './modules/books/book.module';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from './shared/interceptor/request.interceptor';
 
-const COMPONENTS = [AuthenticationModule, BooksModule, SharedModule];
+const COMPONENTS = [AuthenticationModule, BooksModule];
 
 @NgModule({
   declarations: [
@@ -21,10 +22,22 @@ const COMPONENTS = [AuthenticationModule, BooksModule, SharedModule];
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NotifierModule.withConfig({
+      position: {
+        vertical: { position: "top" },
+        horizontal: { position: "right" }
+      }
+    }),
     RouterModule.forRoot(appRoutes),
     ...COMPONENTS
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [
     AppComponent
   ],  

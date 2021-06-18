@@ -9,10 +9,11 @@ import { Login } from "../../models/interfaces/login.model";
 export class AuthenticationFormComponent {
 
   @Input() login: Login;
-  @Output() onSignIn: EventEmitter<void> = new EventEmitter();
+  @Output() onSignIn: EventEmitter<void>; 
 
   constructor() {
     this.login = {} as Login;
+    this.onSignIn = new EventEmitter();
   }
 
   signIn(): void {
