@@ -6,16 +6,16 @@
         <form>
             <span class="login__field">
                 <span>Email</span>
-                <input type="text" />
+                <input type="text" name="email" [(ngModel)]="login.email" />
             </span>
 
             <span class="login__field login__field--password">
                 <span>
                     <span>Senha</span>
-                    <input type="password" />
+                    <input type="password" name="password" [(ngModel)]="login.password" />
                 </span>
 
-                <button type="button"> Entrar </button>
+                <button type="button" (click)="signIn()"> Entrar </button>
             </span>
         </form>
     </div>

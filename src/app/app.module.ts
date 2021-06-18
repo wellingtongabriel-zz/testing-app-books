@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { appRoutes } from './app.routes';
@@ -8,6 +8,8 @@ import { BooksModule } from './modules/books/book.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const COMPONENTS = [AuthenticationModule, BooksModule, SharedModule];
 
@@ -17,12 +19,17 @@ const COMPONENTS = [AuthenticationModule, BooksModule, SharedModule];
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     ...COMPONENTS
   ],
   providers: [],
   bootstrap: [
     AppComponent
+  ],  
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class AppModule { }
