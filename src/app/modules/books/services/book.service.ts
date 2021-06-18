@@ -1,9 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { CookieEnum } from "src/app/shared/models/enums/cookies.enum";
 import { Paginated } from "src/app/shared/models/interfaces/paginated.model";
-import { CookieGenericService } from "src/app/shared/services/cookies-generic.service";
 import { environment } from "src/environments/environment";
 import { Book } from "../models/interfaces/book.model";
 
