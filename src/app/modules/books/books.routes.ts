@@ -1,3 +1,3 @@
 import { Routes } from '@angular/router';
 
-export const livrosRoutes: Routes = [];
+export const booksRoutes: Routes = [];

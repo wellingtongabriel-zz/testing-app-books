@@ -1,3 +1,3 @@
 import { Routes } from '@angular/router';
 
-export const autenticacaoRoutes: Routes = [];
+export const authenticationRoutes: Routes = [];

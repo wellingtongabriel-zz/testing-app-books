@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { MenuComponent } from "./components/menu/menu.component";
-import { AutenticacaoGuard } from "./guard/Authentication/autenticacao.guard";
+import { AuthenticationGuard } from "./guard/Authentication/authentication.guard";
 
 const COMPONENTS = [MenuComponent]
 
@@ -13,7 +13,7 @@ const COMPONENTS = [MenuComponent]
     ...COMPONENTS
   ],
   providers: [
-    AutenticacaoGuard
+    AuthenticationGuard
   ]
 })
 export class SharedModule {}
