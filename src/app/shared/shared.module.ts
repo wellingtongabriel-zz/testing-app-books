@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { AutenticacaoGuard } from "./guard/Autenticacao/autenticacao.guard";
+import { AutenticacaoGuard } from "./guard/Authentication/autenticacao.guard";
 
 @NgModule({
   declarations: [],
