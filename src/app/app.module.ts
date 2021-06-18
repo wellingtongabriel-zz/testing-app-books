@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RequestInterceptor } from './shared/interceptor/request.interceptor';
+import { HttpRequestInterceptor } from './shared/interceptor/http-request.interceptor';
 
 const COMPONENTS = [AuthenticationModule, BooksModule];
 
@@ -34,7 +34,7 @@ const COMPONENTS = [AuthenticationModule, BooksModule];
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: RequestInterceptor,
+      useClass: HttpRequestInterceptor,
       multi: true
     }
   ],

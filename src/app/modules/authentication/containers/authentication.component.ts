@@ -38,9 +38,6 @@ export class AuthenticationComponent {
         
         this.router.navigate(['books']);
 
-      }, (err) => {
-        console.log('err', err)
-        this.notifier.notify('error', 'Erro ao tentar logar, verifique os dados novamente!')
-      })
+      }, (err) => this.notifier.notify('error', 'Erro ao tentar logar, verifique os dados novamente!'))
   }
 }

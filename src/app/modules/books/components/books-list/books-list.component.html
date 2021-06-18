@@ -8,7 +8,7 @@
             <div class="books__content">
                 <header>
                     <h1> {{ book.title }} </h1>
-                    <h4> Charles Duhigg </h4>
+                    <h4 *ngFor="let author of book.authors"> {{ author }} </h4>
                 </header>
 
                 <span class="books__description">

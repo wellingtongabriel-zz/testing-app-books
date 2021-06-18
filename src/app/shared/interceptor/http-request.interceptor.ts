@@ -10,7 +10,7 @@ import { CookieGenericService } from '../services/cookies-generic.service';
 import { CookieEnum } from '../models/enums/cookies.enum';
 
 @Injectable()
-export class RequestInterceptor implements HttpInterceptor {
+export class HttpRequestInterceptor implements HttpInterceptor {
 
     constructor(private cookieGenericService: CookieGenericService) {}
 

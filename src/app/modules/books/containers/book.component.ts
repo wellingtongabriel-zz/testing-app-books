@@ -19,9 +19,9 @@ export class BookComponent implements OnInit {
     this.getBooks();
   }
 
-  private getBooks(page: number = 1): void {
+  private getBooks(): void {
     this.bookService
-      .getUsers(page)
+      .getUsers()
       .subscribe(response => this.books = response.data)
   }
 }
