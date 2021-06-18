@@ -1,11 +1,19 @@
 import { NgModule } from "@angular/core";
-import { AutenticacaoGuard } from "./guard/Autenticacao/autenticacao.guard";
+import { MenuComponent } from "./components/menu/menu.component";
+import { AuthenticationGuard } from "./guard/Authentication/authentication.guard";
+
+const COMPONENTS = [MenuComponent]
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ...COMPONENTS
+  ],
   imports: [],
+  exports: [
+    ...COMPONENTS
+  ],
   providers: [
-    AutenticacaoGuard
+    AuthenticationGuard
   ]
 })
 export class SharedModule {}
