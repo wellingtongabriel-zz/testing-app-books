@@ -1,0 +1,82 @@
+@import '../../../../../assets/styles/variable.scss';
+
+.login {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(../../../../../assets/images/background-login.png);
+    background-size: cover;
+    background-origin: initial;
+
+    &__container {
+        position: absolute;
+        color: $color-white;
+        
+        top: 360px;
+        left: 115px;
+
+        > h1 {
+            padding: 25px 0;
+
+            > span {
+                font-weight: normal;
+                font-size: 20px;
+            }
+        }
+
+        > form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+            min-height: 98px;
+
+            > span:nth-child(1) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-around;
+            }
+
+            > span {
+                min-width: 300px;
+                background: $background-color-input;
+                min-height: 45px;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__field {
+        position: relative;
+        padding: 0 3px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > span {
+            font-size: 12px;
+        }
+
+        > button {
+            border-radius: 44px;
+            color: $color-pink;
+            width: 85px;
+            height: 36px;
+            border: none;
+            cursor: pointer;
+        }
+
+        &--password {
+            > span {
+                display: flex;
+                width: 80%;
+                flex-direction: column;
+            }
+        }
+    }
+
+}
+
