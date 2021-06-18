@@ -1,9 +1,17 @@
 import { NgModule } from "@angular/core";
+import { MenuComponent } from "./components/menu/menu.component";
 import { AuthenticationGuard } from "./guard/Authentication/authentication.guard";
 
+const COMPONENTS = [MenuComponent]
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    ...COMPONENTS
+  ],
   imports: [],
+  exports: [
+    ...COMPONENTS
+  ],
   providers: [
     AuthenticationGuard
   ]
