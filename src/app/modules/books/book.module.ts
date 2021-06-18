@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { livrosRoutes } from "./books.routes";
+import { booksRoutes } from "./books.routes";
 
 import { BookDetailComponent } from "./components/book-detail/book-detail.component";
 import { BooksListComponent } from "./components/books-list/books-list.component";
@@ -16,7 +16,7 @@ import { BookService } from "./services/book.service";
     BooksListComponent,
   ],
   imports: [
-    RouterModule.forChild(livrosRoutes)
+    RouterModule.forChild(booksRoutes)
   ],
   exports: [
     BookComponent
