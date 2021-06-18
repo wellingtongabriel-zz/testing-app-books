@@ -8,9 +8,11 @@ import { Book } from "../../models/interfaces/book.model";
 })
 export class BooksListComponent {
 
+  @Input() isLoading: boolean;
   @Input() books: Array<Book>;
 
   constructor() {
+    this.isLoading = false;
     this.books = [];
   }
 }

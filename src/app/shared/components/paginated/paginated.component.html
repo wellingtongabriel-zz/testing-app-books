@@ -1,0 +1,19 @@
+<footer>
+    <div class="paginated">
+        <div>Página <b> {{ currentPage }} </b> de <b> {{ _totalPage }} </b></div>
+        <div class="paginated__icons">
+            <button 
+                type="button"
+                (click)="prev()" 
+                [disabled]="checkPrevChange()"> 
+                <span> < </span> 
+            </button>
+            <button 
+                type="button"
+                (click)="next()" 
+                [disabled]="checkNextChange()">
+                <span> > </span>
+            </button>
+        </div>
+    </div>
+</footer>
