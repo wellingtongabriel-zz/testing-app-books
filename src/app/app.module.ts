@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 
-import { AutenticacaoModule } from './modules/autenticacao/autenticacao.module';
-import { LivrosModule } from './modules/livros/livros.module';
+import { BooksModule } from './modules/books/book.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
+import { AuthenticationModule } from './modules/authentication/authentication.module';
 
-const COMPONENTS = [AutenticacaoModule, LivrosModule, SharedModule];
+const COMPONENTS = [AuthenticationModule, BooksModule, SharedModule];
 
 @NgModule({
   declarations: [

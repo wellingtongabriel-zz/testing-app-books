@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { MenuComponent } from "./components/menu/menu.component";
-import { AutenticacaoGuard } from "./guard/Autenticacao/autenticacao.guard";
+import { AutenticacaoGuard } from "./guard/Authentication/autenticacao.guard";
 
 const COMPONENTS = [MenuComponent]
 
