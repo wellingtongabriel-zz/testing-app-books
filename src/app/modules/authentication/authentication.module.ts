@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { autenticacaoRoutes } from "./authentication.routes";
+import { authenticationRoutes } from "./authentication.routes";
 import { AuthenticationFormComponent } from "./components/authentication-form/authentication-form.component";
 import { AuthenticationComponent } from "./containers/authentication.component";
 import { AuthenticationService } from "./services/authentication.service";
@@ -12,7 +12,7 @@ import { AuthenticationService } from "./services/authentication.service";
     AuthenticationFormComponent
   ],
   imports: [
-    RouterModule.forChild(autenticacaoRoutes)
+    RouterModule.forChild(authenticationRoutes)
   ],
   exports: [
     AuthenticationComponent
