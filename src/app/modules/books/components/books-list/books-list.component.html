@@ -1,6 +1,6 @@
 <section>
     <div class="books">
-        <div *ngFor="let book of books" class="books__card">
+        <div *ngFor="let book of books" (click)="openDetail(book.id)" class="books__card">
             <div class="books__image">
                 <img [src]="book.imageUrl" [alt]="book.title" />
             </div>
