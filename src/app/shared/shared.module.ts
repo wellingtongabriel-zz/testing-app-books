@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
-import { AutenticacaoGuard } from "./guard/Authentication/autenticacao.guard";
+import { AuthenticationGuard } from "./guard/Authentication/authentication.guard";
 
 @NgModule({
   declarations: [],
   imports: [],
   providers: [
-    AutenticacaoGuard
+    AuthenticationGuard
   ]
 })
 export class SharedModule {}

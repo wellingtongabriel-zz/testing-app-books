@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { livrosRoutes } from "./livros.routes";
+import { livrosRoutes } from "./books.routes";
 
 import { BookDetailComponent } from "./components/book-detail/book-detail.component";
 import { BooksListComponent } from "./components/books-list/books-list.component";
