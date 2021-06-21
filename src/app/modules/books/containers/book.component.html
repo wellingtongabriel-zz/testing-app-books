@@ -1,5 +1,12 @@
 <section>
     <ioa-menu></ioa-menu>
-    <ioa-books-list
-        [books]="books"></ioa-books-list>
+    
+    <ioa-books-list  
+        [isLoading]="isLoading"
+        [books]="bookPaginated.data"></ioa-books-list>
+
+    <ioa-paginated
+        (onChange)="getBooks($event)"
+        [currentPage]="bookPaginated.page"
+        [total]="bookPaginated.totalPages"></ioa-paginated>
 </section>

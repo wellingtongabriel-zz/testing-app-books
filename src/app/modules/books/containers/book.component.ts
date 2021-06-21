@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { Paginated } from "src/app/shared/models/interfaces/paginated.model";
 import { Book } from "../models/interfaces/book.model";
 import { BookService } from "../services/book.service";
+import { finalize } from "rxjs/operators";
 
 @Component({
   selector: 'ioa-book',
@@ -9,19 +11,24 @@ import { BookService } from "../services/book.service";
 })
 export class BookComponent implements OnInit {
 
-  books: Array<Book>;
+  isLoading: boolean;
+  bookPaginated: Paginated<Book>;
 
   constructor(private bookService: BookService) {
-    this.books = [];
+    this.isLoading = false;
+    this.bookPaginated = {} as Paginated<Book>;
   }
   
   ngOnInit(): void {
     this.getBooks();
   }
 
-  private getBooks(): void {
+  getBooks(page: number = 1): void {
+    this.isLoading = true;
+
     this.bookService
-      .getUsers()
-      .subscribe(response => this.books = response.data)
+      .getUsers(page)
+      .pipe(finalize(() => this.isLoading = false))
+      .subscribe((response: Paginated<Book>) => this.bookPaginated = response)
   }
 }

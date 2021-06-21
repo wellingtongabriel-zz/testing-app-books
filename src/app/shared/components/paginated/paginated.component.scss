@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/variable.scss';
+
+footer {
+
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginated {
+    display: flex;
+    max-width: 1110px;
+    width: 100%;
+    
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+
+    &__icons {
+        display: flex;
+        gap: 10px;
+
+        > button {
+            background-color: transparent;
+            border-radius: 50%;
+            border: 2px solid $color-light-gray-two;
+            color: $color-light-gray-two;
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:disabled {
+                cursor: no-drop;
+            }
+        }
+    }
+}
+
