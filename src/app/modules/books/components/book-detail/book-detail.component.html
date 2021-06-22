@@ -1,20 +1,19 @@
-<div class="close">
+<div (click)="closeModal()" class="close">
     <span> x </span>
 </div>
 
 <section>
     <div class="detail">
-
         <div class="detail__image">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/41MmVmzeojL._SX314_BO1,204,203,200_.jpg" alt=""
-                srcset="" />
+            <img 
+                [src]="book.imageUrl" 
+                [alt]="book.title" />
         </div>
 
         <div class="detail__description">
-
             <header>
-                <h1> Change By design second Line exempl... </h1>
-                <span> Tim Brown, Julie Zhuo, fried maximiilian </span>
+                <h1> {{ book.title }} </h1>
+                <span> {{ book.authors.join(", ") }} </span>
             </header>
 
             <div class="detail__info">
@@ -22,41 +21,38 @@
                 <div>
                     <span>
                         <label> Páginas </label>
-                        <label> 304 Páginas </label>
+                        <label> {{ book.pageCount }} Páginas </label>
                     </span>
                     <span>
                         <label> Editor </label>
-                        <label> Editora Loyola </label>
+                        <label> Editora {{ book.publisher }} </label>
                     </span>
                     <span>
                         <label> Publicação </label>
-                        <label> 2020 </label>
+                        <label> {{ book.published }} </label>
                     </span>
                     <span>
                         <label> Idioma </label>
-                        <label> Inglês </label>
+                        <label> {{ book.language }} </label>
                     </span>
                     <span>
                         <label> Titulo Original </label>
-                        <label> Change By Design </label>
+                        <label> {{ book.title }} </label>
                     </span>
                     <span>
                         <label> ISBN-10 </label>
-                        <label> C00065656645 </label>
+                        <label> {{ book.isbn10 }} </label>
                     </span>
                     <span>
                         <label> ISBN-13 </label>
-                        <label> C00065656645 </label>
+                        <label> {{ book.isbn13 }} </label>
                     </span>
                 </div>
             </div>
 
             <div class="detail__bio">
                 <h2>Resenha da Editora</h2>
-                <span>is simply dummy text of the printing is simply dummy text of the printing is simply dummy text of
-                    the printing is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown is simply dummy text of the
-                    printing and typesetting industry</span>
+                <span> {{ book.description }} </span>
             </div>
         </div>
     </div>

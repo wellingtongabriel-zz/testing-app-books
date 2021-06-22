@@ -2,8 +2,14 @@
     <ioa-menu></ioa-menu>
     
     <ioa-books-list  
+        (onOpenDetail)="openDetail($event)"
         [isLoading]="isLoading"
         [books]="bookPaginated.data"></ioa-books-list>
+
+    <ioa-book-detail
+        *ngIf="isShowModal"
+        [book]="bookDetail"
+        (onCloseModal)="closeModal()"></ioa-book-detail>
 
     <ioa-paginated
         (onChange)="getBooks($event)"
