@@ -79,7 +79,7 @@ describe('AuthenticationComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('Deve se logar na aplicação', () => {
+    it('Should log in to the application', () => {
         component.login = {
             email: "email@gmail.com",
             password: "123"
