@@ -46,6 +46,6 @@ export class PaginatedComponent {
     }
 
     checkNextChange(): boolean {
-        return this.currentPage >= this.total;
+        return this.currentPage >= this._totalPage;
     }
 }
