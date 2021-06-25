@@ -38,3 +38,18 @@ section {
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 767.98px) { 
+    .menu {
+        width: 95%;
+        margin: 10px;
+
+        &__logout {
+            padding: 10px 0;
+
+            label:first-child {
+                display: none;
+            }
+        }
+    }
+}

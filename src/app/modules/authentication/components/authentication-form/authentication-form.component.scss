@@ -80,3 +80,18 @@
 
 }
 
+
+@media (max-width: 767.98px) { 
+    .login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__container {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+    }
+}
