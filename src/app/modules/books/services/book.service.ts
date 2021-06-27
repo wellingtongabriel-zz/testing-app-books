@@ -10,7 +10,7 @@ export class BookService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getBooks(page: number): Observable<Paginated<Book>> {
+    getBooks(page: number = 1): Observable<Paginated<Book>> {
         return this.httpClient.get<Paginated<Book>>(`${environment.api}/books?page=${page}&amount=12`);
     }
 
