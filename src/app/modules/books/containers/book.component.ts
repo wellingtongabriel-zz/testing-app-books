@@ -2,7 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Paginated } from "src/app/shared/models/interfaces/paginated.model";
 import { Book } from "../models/interfaces/book.model";
 import { BookService } from "../services/book.service";
-import { finalize } from "rxjs/operators";
+import { Store } from "@ngrx/store";
+import { BookState } from "src/app/store/state/book.state";
+
+import * as bookActions from '../../../store/actions/books.actions';
 
 @Component({
   selector: 'ioa-book',
@@ -11,29 +14,35 @@ import { finalize } from "rxjs/operators";
 })
 export class BookComponent implements OnInit {
 
-  isShowModal: boolean;
   isLoading: boolean;
+  isShowModal: boolean;
   bookPaginated: Paginated<Book>;
   bookDetail: Book;
 
-  constructor(private bookService: BookService) {
-    this.isShowModal = false;
+  constructor(
+    private store: Store<{ books: BookState }>,
+    private bookService: BookService) {
     this.isLoading = false;
+    this.isShowModal = false;
     this.bookPaginated = {} as Paginated<Book>;
     this.bookDetail = {} as Book;
   }
   
   ngOnInit(): void {
-    this.getBooks();
+    this.store.dispatch(bookActions.SetLoading({ payload: true }));
+    this.store.dispatch(bookActions.GetBooks({ page: 1 }));
+
+    this.store
+      .select(`books`)
+      .subscribe((response) => {
+        this.bookPaginated = response.paginatedBook;
+        this.isLoading = response.Loading;
+      });
   }
 
   getBooks(page: number = 1): void {
-    this.isLoading = true;
-
-    this.bookService
-      .getBooks(page)
-      .pipe(finalize(() => this.isLoading = false))
-      .subscribe((response: Paginated<Book>) => this.bookPaginated = response)
+    this.store.dispatch(bookActions.SetLoading({ payload: true }));
+    this.store.dispatch(bookActions.GetBooks({ page: page }));
   }
 
   closeModal(): void {
