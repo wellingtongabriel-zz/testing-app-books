@@ -11,6 +11,10 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpRequestInterceptor } from './shared/interceptor/http-request.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { bookReducer } from './store/reducers/books.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { BookEffect } from './store/effects/books.effects';
 
 const COMPONENTS = [AuthenticationModule, BooksModule];
 
@@ -29,7 +33,9 @@ const COMPONENTS = [AuthenticationModule, BooksModule];
       }
     }),
     RouterModule.forRoot(appRoutes),
-    ...COMPONENTS
+    ...COMPONENTS,
+    StoreModule.forRoot({ books: bookReducer }),
+    EffectsModule.forRoot([ BookEffect ])
   ],
   providers: [
     {
